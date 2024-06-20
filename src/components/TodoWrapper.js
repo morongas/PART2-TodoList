@@ -13,11 +13,7 @@ export const TodoWrapper = () => {
     const addTodo = todo => {
         setTodos([...todos, {id: uuidv4(), task: todo}]);
     }
-    const addCompleted = done => {
-        setDones([...dones, {id: uuidv4(), task: done}]);
-    }
-
-
+    
     const toggleComplete = id => {
         const todo = todos.find(todo => todo.id === id);
         if (todo) {
@@ -50,16 +46,7 @@ export const TodoWrapper = () => {
             })
         );
     }
-    const completedBox = id => {
-        setTodos(
-            todos.map(todo => {
-                if (todo.id === id) {
-                    return {...todo, completed: !todo.completed};
-                }
-                return todo;
-            })
-        );
-    }
+    
     const toggleUncomplete = id => {
         const done = dones.find(done => done.id === id);
         if (done) {
